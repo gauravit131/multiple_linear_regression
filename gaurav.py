@@ -7,12 +7,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
+#------------------------------------------------------------------
 
 df = pd.read_csv('gaurav.csv')
-
 print(df.head())
+
 #dataset information
 print(df.info())
+
 # stastical information of data of first 5 
 print(df.describe)
 
@@ -22,10 +24,9 @@ print(f"Dataset Shape: {df.shape}")
 #checking for missing values
 print(df.isnull().sum())
 
+#------------------------------------------------------------------
 
-
-
-# Assuming df is your DataFrame
+# As df is our DataFrame
 x = df.drop('PurchaseStatus', axis=1)  # Features
 y = df['PurchaseStatus']  # Target
 
@@ -59,7 +60,7 @@ plt.plot(x_scaled[:, 0], model.predict(x_scaled), color="red", label="Regression
 plt.legend()
 plt.show()
 
-
+#------------------------------------------------------------------
 
 # visualising data using matplotlip and sea born 
 
@@ -92,7 +93,5 @@ plt.figure(figsize=(10,6))
 sns.countplot(x='ProductCategory', data=df)
 plt.title('Product Category Distribution')
 plt.show()
-x = df.drop('PurchaseStatus', axis=1)
-y = df['PurchaseStatus']
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+
 
